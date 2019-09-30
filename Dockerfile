@@ -1,6 +1,8 @@
 FROM alpine:3.10
 MAINTAINER IF Fulcrum "fulcrum@ifsight.net"
 
+ENV BUILDDATE 201909301236
+
 RUN STARTTIME=$(date "+%s")                                                                    && \
 ALPINE_VER=3.10                                                                                && \
 PHPV0=7                                                                                        && \
@@ -22,7 +24,7 @@ PHPVER=$PHPV0.$PHPV1.$PHPV2                                                     
 echo "################## [$(date)] PHP Version $PHPVER ##################"                     && \
 echo "################## [$(date)] Add Packages ##################"                            && \
 apk update --no-cache && apk upgrade --no-cache                                                && \
-apk add --no-cache curl-dev mysql-client postfix                                          && \
+apk add --no-cache curl-dev mysql-client postfix                                               && \
 apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community gnu-libiconv && \
 apk add --no-cache --virtual gen-deps alpine-sdk autoconf binutils libbz2 libpcre16 libpcre32     \
   libpcrecpp m4 pcre-dev pcre2 pcre2-dev perl                                                  && \
