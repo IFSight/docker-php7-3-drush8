@@ -1,7 +1,7 @@
 FROM alpine:3.10
 MAINTAINER IF Fulcrum "fulcrum@ifsight.net"
 
-ENV BUILDDATE 202104290401
+ENV BUILDDATE 202107010401
 
 ADD healthcheck.sh /healthcheck.sh
 
